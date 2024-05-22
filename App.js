@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import GameList from './components/GameList/GameList';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import GameCategories from './components/GameCategories/GameCategories';
+
+const Stack = createStackNavigator();
+
 
 export default function App() {
+
+  let [gameIndex, setGameIndex] = useState(0);
+
+  const StackNavigator = () => (
+    <Stack.Navigator
+    screenOptions={{headerShown: false}}>
+      <Stack.Screen name="GameList">
+        {props => <GameList {...props} setGameIndex={setGameIndex} gameIndex={gameIndex} />}
+      </Stack.Screen>
+
+      <Stack.Screen name="GameCategories">
+  {props => <GameCategories {...props} gameIndex={gameIndex} />}
+</Stack.Screen>
+
+
+    </Stack.Navigator>
+  );
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+   
+        <StackNavigator />
+        
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
