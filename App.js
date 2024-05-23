@@ -4,6 +4,7 @@ import GameList from './components/GameList/GameList';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import GameCategories from './components/GameCategories/GameCategories';
+import AuthNavigator from './app/navigation/AuthNavigator';
 
 const Stack = createStackNavigator();
 
@@ -29,9 +30,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-   
-        <StackNavigator />
-        
+
+      {/* <StackNavigator/> */}
+    <AuthNavigator/> 
     </NavigationContainer>
   );
 }
