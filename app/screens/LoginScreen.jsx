@@ -1,9 +1,40 @@
-import { StyleSheet, Image, SafeAreaView, TouchableOpacity, Text, TextInput, View, Button } from "react-native";
+import {useState} from 'react';
+import { StyleSheet, Image, SafeAreaView, TouchableOpacity, Text, TextInput, View} from "react-native";
 import { Formik } from "formik";
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginScreen(){
 
+
+  const logAllAsyncStorageItems = async () => {
+    try {
+      const keys = await AsyncStorage.getAllKeys();
+      if (keys.length > 0) {
+        const stores = await AsyncStorage.multiGet(keys);
+        stores.forEach((result, i, store) => {
+          let key = store[i][0];
+          let value = store[i][1];
+          console.log(`Key: ${key}, Value: ${value}`);
+        });
+      } else {
+        console.log('AsyncStorage is empty');
+      }
+    } catch (error) {
+      console.error('Error fetching AsyncStorage items: ', error);
+    }
+  };
+
+  const clearAllAsyncStorageItems = async () => {
+    try {
+      await AsyncStorage.clear();
+      console.log('All AsyncStorage items cleared');
+    } catch (error) {
+      console.error('Error clearing AsyncStorage items: ', error);
+    }
+  };
+
+  logAllAsyncStorageItems();
+  clearAllAsyncStorageItems();
     return(
 
         <SafeAreaView style={styles.container}>

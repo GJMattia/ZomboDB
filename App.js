@@ -1,12 +1,18 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import GameList from './components/GameList/GameList';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import GameCategories from './components/GameCategories/GameCategories';
 import AuthNavigator from './app/navigation/AuthNavigator';
 
+import GameList from './components/GameList/GameList';
+import GameCategories from './components/GameCategories/GameCategories';
+
+import { LogBox } from 'react-native';
+
+
+
 const Stack = createStackNavigator();
+
+LogBox.ignoreLogs(['Require cycle:']);
 
 
 export default function App() {
