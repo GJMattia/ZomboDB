@@ -4,14 +4,13 @@ import {signUp} from '../../requests/user-services';
 import {useState} from 'react';
 
 
-export default function RegisterScreen(){
+export default function RegisterScreen({setUser}){
 
-const [test, setTest] = useState(null);
 
   async function handleSubmit(userData){
     try{
       const user = await signUp(userData);
-      setTest(user);
+      setUser(user);
       
     }catch (error) {
       console.log('Sign Up Failed - Try Again');
@@ -23,6 +22,8 @@ const [test, setTest] = useState(null);
         <SafeAreaView style={styles.container}>
         <Text style={styles.tagline}>Register NOW</Text>
         <Image source={require('../assets/images/perks/WAWdt.gif')}/>
+
+
 
         <Formik
         initialValues={{ name: 'f', email: 'f', password: 'f'  }}
@@ -60,11 +61,19 @@ const [test, setTest] = useState(null);
               secureTextEntry
               style={styles.input}
             /> */}
+
+
             <TouchableOpacity 
             onPress={handleSubmit}
             style={styles.button}>
+
+
             <Text style={styles.text}>Create Account</Text>
+
+            
             </TouchableOpacity>
+
+
           </View>
         )}
       </Formik>

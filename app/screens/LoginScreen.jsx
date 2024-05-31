@@ -1,51 +1,31 @@
-import {useState} from 'react';
 import { StyleSheet, Image, SafeAreaView, TouchableOpacity, Text, TextInput, View} from "react-native";
 import { Formik } from "formik";
-import AsyncStorage from '@react-native-async-storage/async-storage';
-
-export default function LoginScreen(){
+import {login} from '../../requests/user-services';
 
 
-  const logAllAsyncStorageItems = async () => {
-    try {
-      const keys = await AsyncStorage.getAllKeys();
-      if (keys.length > 0) {
-        const stores = await AsyncStorage.multiGet(keys);
-        stores.forEach((result, i, store) => {
-          let key = store[i][0];
-          let value = store[i][1];
-          console.log(`Key: ${key}, Value: ${value}`);
-        });
-      } else {
-        console.log('AsyncStorage is empty');
-      }
-    } catch (error) {
-      console.error('Error fetching AsyncStorage items: ', error);
-    }
-  };
+export default function LoginScreen({setUser}){
 
-  const clearAllAsyncStorageItems = async () => {
-    try {
-      await AsyncStorage.clear();
-      console.log('All AsyncStorage items cleared');
-    } catch (error) {
-      console.error('Error clearing AsyncStorage items: ', error);
-    }
-  };
+  async function handleSubmit(userData){
+    try{
+      const user = await login(userData);
+      setUser(user);
+      
+    }catch (error) {
+      console.log('Log in Failed - Try Again');
+  }
+};
 
-  logAllAsyncStorageItems();
-  clearAllAsyncStorageItems();
     return(
 
         <SafeAreaView style={styles.container}>
         <Text style={styles.tagline}>Enter info to sign in!</Text>
         <Image source={require('../assets/images/perks/WAWspeed.gif')}/>
 
+
+
         <Formik
         initialValues={{ email: '', password: '' }}
-        onSubmit={values => {
-          console.log(values);
-        }}
+        onSubmit={(values) => handleSubmit(values)}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => (
           <View style={styles.slop}>
@@ -64,13 +44,24 @@ export default function LoginScreen(){
               secureTextEntry
               style={styles.input}
             />
+
+            <TouchableOpacity
+              onPress={handleSubmit} 
+              style={styles.button}>
+
+            <Text style={styles.text}>sign in</Text>
+
+
+            </TouchableOpacity>
           </View>
         )}
+
+        
       </Formik>
 
-        <TouchableOpacity style={styles.button}>
-            <Text style={styles.text}>sign in</Text>
-            </TouchableOpacity>
+       
+
+
         </SafeAreaView>
 
 
