@@ -1,0 +1,66 @@
+{
+    "name": "World at War",
+    "maps": [
+      {
+          "name": "Nact Der Untoten",
+          "starting": [],
+          "perks":[],
+          "box": [],
+          "wall": []
+      }
+  ],
+    "guns": [
+        {"name": "m1911", "price": 0},
+        {"name": "frag grenades", "price": 0},
+        {"name": ".357 Magnum", "price": 0},
+        {"name": "Thompson", "price": 1200},
+        {"name": "MP40", "price": 0},
+        {"name": "M1897 Trench Gun", "price": 1500},
+        {"name": "Double-Barreled Shotgun (Sawed-Off w/Grip)", "price": 1200},
+        {"name": "Double-Barreled Shotgun (Normal)", "price": 1200},
+        {"name": "Kar98k (Scoped)", "price": 200},
+        {"name": "Kar98k (Normal)", "price": 200},
+        {"name": "Springfield", "price": 0},
+        {"name": "M1 Garand (w/Launcher)", "price": 0},
+        {"name": "M1 Garand (Normal)", "price": 0},
+        {"name": "Gewehr 43", "price": 0},
+        {"name": "M1A1 Carbine", "price": 600},
+        {"name": "STG-44", "price": 0},
+        {"name": "PTRS-41", "price": 0},
+        {"name": "BAR", "price": 1800},
+        {"name": "Deployable FG42", "price": 0},
+        {"name": "Deployable M1919 Browning", "price": 0},
+        {"name": "M2 Flamethrower", "price": 0},
+        {"name": "Panzerschrek", "price": 0},
+        {"name": "Ray Gun", "price": 0},
+        {"name": "MG42", "price": 0},
+        {"name": "Stiel Hand Grenade", "price": 250, "quantity": 4},
+        {"name": "Molotov Cocktails", "price": 0, "quantity": 4}
+      ],
+      "perks": [
+        {
+            "name": "Quick Revive",
+            "img": "app/assets/images/perks/WAWqr.gif",
+            "effect": "Revive Teammates 50% faster",
+            "price": 1500
+          },
+          {
+            "name": "Jug",
+            "img": "",
+            "effect": "Regenerate health 4x faster",
+            "price": 2500
+          },
+          {
+            "name": "Double Tap",
+            "img": "",
+            "effect": "Bullet Velocity increases by 33%",
+            "price": 2000
+          },
+          {
+            "name": "Speed Cola",
+            "img": "",
+            "effect": "Reload 2x faster",
+            "price": 3000
+          }      
+      ]
+  }

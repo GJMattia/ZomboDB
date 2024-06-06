@@ -1,0 +1,34 @@
+{
+    "name": "Black Ops 1",
+    "maps": [
+  ],
+    "guns": [
+        
+      ],
+      "perks": [
+        {
+            "name": "Quick Revive",
+            "img": "",
+            "effect": "Revive Teammates 50% faster",
+            "price": 1500
+          },
+          {
+            "name": "Jug",
+            "img": "",
+            "effect": "Regenerate health 4x faster",
+            "price": 2500
+          },
+          {
+            "name": "Double Tap",
+            "img": "",
+            "effect": "Bullet Velocity increases by 33%",
+            "price": 2000
+          },
+          {
+            "name": "Speed Cola",
+            "img": "",
+            "effect": "Reload 2x faster",
+            "price": 3000
+          }      
+      ]
+  }
