@@ -35,15 +35,26 @@ export default function GameInfoScreen({navigation, route}){
 
       const renderGameData = () => {
         if (!gameData) return null;
-        return Object.keys(gameData).map((key, index) => (
-          <View key={index} style={styles.buttonContainer}>
-            <TouchableOpacity 
-            style={styles.button}
-            onPress={() => navigation.navigate(routes.PERKS, { perkData: gameData.perks })}>
-              <Text style={styles.buttonText}>{key.charAt(0).toUpperCase() + key.slice(1)}</Text>
-            </TouchableOpacity>
-          </View>
-        ));
+      
+        return Object.keys(gameData)
+          .filter(key => key !== 'name') // Exclude 'name' key
+          .map((key, index) => (
+            <View key={index} style={styles.buttonContainer}>
+              <TouchableOpacity 
+                style={styles.button}
+                onPress={() => {
+                  if (key === 'maps') {
+                    navigation.navigate(routes.MAPS, { mapData: gameData[key] });
+                  } else if (key === 'perks') {
+                    navigation.navigate(routes.PERKS, { perkData: gameData[key] });
+                  }
+                  // Add more conditions if there are more keys to handle
+                }}
+              >
+                <Text style={styles.buttonText}>{key.charAt(0).toUpperCase() + key.slice(1)}</Text>
+              </TouchableOpacity>
+            </View>
+          ));
       };
 
     return(

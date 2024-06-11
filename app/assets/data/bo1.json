@@ -1,6 +1,34 @@
 {
     "name": "Black Ops 1",
     "maps": [
+      {
+          "name": "Kino Der Toten",
+          "starting": [],
+          "perks":[],
+          "box": [],
+          "wall": []
+      },
+      {
+        "name": "Five",
+        "starting": [],
+        "perks":[],
+        "box": [],
+        "wall": []
+       },
+       {
+      "name": "Ascension",
+      "starting": [],
+      "perks":[],
+      "box": [],
+      "wall": []
+     },
+     {
+    "name": "Shangri La",
+    "starting": [],
+    "perks":[],
+    "box": [],
+    "wall": []
+}
   ],
     "guns": [
         
@@ -29,6 +57,18 @@
             "img": "",
             "effect": "Reload 2x faster",
             "price": 3000
-          }      
+          },
+          {
+            "name": "Speed Cola",
+            "img": "",
+            "effect": "Reload 2x faster",
+            "price": 3000
+          },
+          {
+            "name": "Speed Cola",
+            "img": "",
+            "effect": "Reload 2x faster",
+            "price": 3000
+          }        
       ]
   }

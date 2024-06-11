@@ -2,30 +2,23 @@ import { ImageBackground, StyleSheet, View, Image, Text, TouchableOpacity } from
 import routes from "../navigation/routes";
 
 
-export default function GameScreen({navigation, route}){
+export default function MapsScreen({navigation, route}){
 
-    const wawPerks = {
-      "Quick Revive": require('../assets/images/perks/WAWqr.gif'),
-      "Jug": require('../assets/images/perks/WAWjug.gif'),
-      "Double Tap": require('../assets/images/perks/WAWdt.gif'),
-      "Speed Cola": require('../assets/images/perks/WAWspeed.gif')
-    }
 
-    const { perkData } = route.params;
+    const { mapData } = route.params;
 
-    const renderPerkData = () => {
-        if (!perkData) return null;
-        return perkData.map((perk, index) => (
+    const renderMapData = () => {
+        if (!mapData) return null;
+        return mapData.map((map, index) => (
           <View key={index} style={styles.buttonContainer}>
             
             <TouchableOpacity 
               style={styles.button}
-              onPress={() => navigation.navigate(routes.PERK, { perkData: perk })}
+              onPress={() => navigation.navigate(routes.MAP, { mapData: map })}
               >
 
 
-              <Text style={styles.buttonText}>{perk.name}</Text>
-              <Image source={wawPerks[perk.name]}/>
+              <Text style={styles.buttonText}>{map.name}</Text>
             </TouchableOpacity>
           </View>
         ));
@@ -37,10 +30,10 @@ export default function GameScreen({navigation, route}){
         style={styles.background}
         source={require("../assets/images/other/night.gif")}>
 
-        <Text style={styles.title}>Perks</Text>
+        <Text style={styles.title}>Maps</Text>
 
         <View style={styles.buttonContainer}>
-        {perkData ? renderPerkData() : <Text>Loading...</Text>}
+        {mapData ? renderMapData() : <Text>Loading...</Text>}
         </View>
 
         

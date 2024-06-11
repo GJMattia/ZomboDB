@@ -7,7 +7,28 @@
           "perks":[],
           "box": [],
           "wall": []
-      }
+      },
+      {
+        "name": "Veruct",
+        "starting": [],
+        "perks":[],
+        "box": [],
+        "wall": []
+       },
+       {
+      "name": "Shino Numa",
+      "starting": [],
+      "perks":[],
+      "box": [],
+      "wall": []
+     },
+     {
+    "name": "Der Reise",
+    "starting": [],
+    "perks":[],
+    "box": [],
+    "wall": []
+}
   ],
     "guns": [
         {"name": "m1911", "price": 0},
@@ -40,7 +61,7 @@
       "perks": [
         {
             "name": "Quick Revive",
-            "img": "app/assets/images/perks/WAWqr.gif",
+            "img": "",
             "effect": "Revive Teammates 50% faster",
             "price": 1500
           },

@@ -13,37 +13,15 @@ export default function GameScreen({navigation, route}){
 
     const { perkData } = route.params;
 
-    const renderPerkData = () => {
-        if (!perkData) return null;
-        return perkData.map((perk, index) => (
-          <View key={index} style={styles.buttonContainer}>
-            
-            <TouchableOpacity 
-              style={styles.button}
-              onPress={() => navigation.navigate(routes.PERK, { perkData: perk })}
-              >
-
-
-              <Text style={styles.buttonText}>{perk.name}</Text>
-              <Image source={wawPerks[perk.name]}/>
-            </TouchableOpacity>
-          </View>
-        ));
-      };
-
-
     return(
     <ImageBackground
         style={styles.background}
         source={require("../assets/images/other/night.gif")}>
 
-        <Text style={styles.title}>Perks</Text>
-
-        <View style={styles.buttonContainer}>
-        {perkData ? renderPerkData() : <Text>Loading...</Text>}
-        </View>
-
-        
+        <Text style={styles.title}>{perkData.name}</Text>
+        <Image source={wawPerks[perkData.name]}/>
+        <Text style={styles.effect}>Effect: {perkData.effect}</Text>
+        <Text style={styles.title}>Price: {perkData.price}</Text>
 
 
         </ImageBackground>
@@ -59,6 +37,12 @@ const styles = StyleSheet.create({
     },
       title: {
         fontSize: 40,
+        fontWeight: "600",
+        paddingVertical: 20,
+        color: 'white'
+      },
+      effect: {
+        fontSize: 30,
         fontWeight: "600",
         paddingVertical: 20,
         color: 'white'

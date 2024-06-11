@@ -11,7 +11,7 @@ LogBox.ignoreLogs(['Require cycle:']);
 
 export default function App() {
 
-  let [user, setUser] = useState(null);
+  let [user, setUser] = useState(true);
 
   return (
     <NavigationContainer>
