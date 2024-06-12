@@ -21,7 +21,7 @@ export default function RegisterScreen({setUser}){
 
         <SafeAreaView style={styles.container}>
         <Text style={styles.tagline}>Register NOW</Text>
-        <Image source={require('../assets/images/perks/WAWdt.gif')}/>
+        <Image source={require('../assets/images/perks/dt.webp')}/>
 
 
 

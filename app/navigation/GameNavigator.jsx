@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import GameScreen from '../screens/GamesScreen';
-import GameInfoScreen from '../screens/GameInfoScreen';
-import GamePerksScreen from '../screens/GamePerksScreen';
+import InfoScreen from '../screens/InfoScreen';
+import PerksScreen from '../screens/PerksScreen';
 import PerkScreen from '../screens/PerkScreen';
 import MapsScreen from '../screens/MapsScreen';
 
@@ -18,7 +18,7 @@ export default function GameNavigator({user, setUser}){
     />
 
     <Stack.Screen name="GameInfo">
-        {props => <GameInfoScreen {...props} setUser={setUser}/>}
+        {props => <InfoScreen {...props} setUser={setUser}/>}
     </Stack.Screen>
 
     <Stack.Screen name="GameMaps">
@@ -26,7 +26,7 @@ export default function GameNavigator({user, setUser}){
     </Stack.Screen>
 
     <Stack.Screen name="GamePerks">
-        {props => <GamePerksScreen {...props} setUser={setUser}/>}
+        {props => <PerksScreen {...props} setUser={setUser}/>}
     </Stack.Screen>
 
     <Stack.Screen name="GamePerk">

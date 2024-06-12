@@ -12,7 +12,7 @@ export default function Sauce({user, setUser}){
 
         <SafeAreaView style={styles.container}>
         <Text style={styles.tagline}>Sign Out?</Text>
-        <Image source={require('../assets/images/perks/WAWjug.gif')}/>
+        <Image source={require('../assets/images/perks/speed.webp')}/>
         <Text style={styles.tagline}>{user.name}</Text>
         
         <TouchableOpacity style={styles.button} onPress={signOut}>

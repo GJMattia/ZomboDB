@@ -1,8 +1,8 @@
-import { ImageBackground, StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import { ImageBackground, StyleSheet, View, Image, Text, TouchableOpacity, FlatList } from "react-native";
 import routes from "../navigation/routes";
 
 
-export default function PerkScreen({navigation, route}){
+export default function PerksScreen({navigation, route}){
 
   const Perks = {
     "Quick Revive": require('../assets/images/perks/qr.webp'),
@@ -23,21 +23,30 @@ export default function PerkScreen({navigation, route}){
 
     const { perkData } = route.params;
 
+    const renderItem = ({ item }) => (
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate(routes.PERK, { perkData: item })}
+      >
+        <Text style={styles.buttonText}>{item.name}</Text>
+        <Image style={styles.perk} source={Perks[item.name]} />
+      </TouchableOpacity>
+    );
+
+
     return(
     <ImageBackground
         style={styles.background}
         source={require("../assets/images/other/night.gif")}>
 
-        <Text style={styles.title}>{perkData.name}</Text>
+        <Text style={styles.title}>Perks</Text>
 
-
-        <Image style={styles.perk} source={Perks[perkData.name]}/>
-
-
-        <Text style={styles.price}>Price: {perkData.price}</Text>
-
-        <Text style={styles.effect}>{perkData.effect}</Text>
-
+        <FlatList
+      style={styles.list}
+      data={perkData}
+      renderItem={renderItem}
+      keyExtractor={(item, index) => index.toString()}
+    />
 
         
 
@@ -50,48 +59,17 @@ export default function PerkScreen({navigation, route}){
 const styles = StyleSheet.create({
     background: {
       flex: 1,
-      justifyContent: 'start',
+      justifyContent: 'center',
       alignItems: "center",
     },
       title: {
         fontSize: 40,
         fontWeight: "600",
         paddingVertical: 20,
-        color: 'white',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
-        width: '90%',
-        textAlign: 'center',
-        fontFamily: 'gothic',
-        marginTop: 10
+        color: 'white'
       },
-      perk:{
-        margin: 20,
-        width: 150,
-        height: 150,
-      },
-      price: {
-        margin: 10,
-        fontSize: 20,
-        backgroundColor: 'rgba(124, 252, 0, 0.7)',
-        color: 'white',
-        padding: 10,
-        width: '50%',
-        textAlign: 'center'
-      },
-      effect: {
-        fontSize: 18,
-        fontWeight: "600",
-        width: '90%',
-        backgroundColor: 'rgba(0, 0, 0, 0.7)',
-        padding: 20,
-        color: 'white',
-        textAlign: 'center',
-        margin: 15
-      },
-      buttonContainer: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
+      list: {
+        width: '90%'
       },
       button: {
         backgroundColor: 'rgba(0, 0, 0, 0.8)',
@@ -105,4 +83,8 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 18,
       },
+      perk:{
+        width: 50,
+        height: 50
+      }
   });

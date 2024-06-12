@@ -4,10 +4,10 @@
     "slug": "ZomboDB",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./app/assets/images/perks/WAWjug.gif",
+    "icon": "./app/assets/images/perks/jug.webp",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./app/assets/images/perks/WAWjug.gif",
+      "image": "./app/assets/images/perks/jug.webp",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,12 +16,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./app/assets/images/perks/WAWjug.gif",
+        "foregroundImage": "./app/assets/images/perks/jug.webp",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "favicon": "./app/assets/images/perks/WAWjug.gif"
+      "favicon": "./app/assets/images/perks/jug.webp"
     }
   }
 }

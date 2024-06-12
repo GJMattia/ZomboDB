@@ -2,7 +2,7 @@ import { ImageBackground, StyleSheet, View, Image, Text, TouchableOpacity, Scrol
 import { useState, useEffect } from "react";
 import routes from "../navigation/routes";
 
-export default function GameInfoScreen({navigation, route}){
+export default function InfoScreen({navigation, route}){
 
     const { gameName } = route.params;
     const [gameData, setGameData] = useState(null);

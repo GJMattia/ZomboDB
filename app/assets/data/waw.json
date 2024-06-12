@@ -62,25 +62,25 @@
         {
             "name": "Quick Revive",
             "img": "",
-            "effect": "Revive Teammates 50% faster",
+            "effect": "Revive Teammates 50% faster.",
             "price": 1500
           },
           {
             "name": "Jug",
             "img": "",
-            "effect": "Regenerate health 4x faster",
+            "effect": "Increased health from 100 to 250.",
             "price": 2500
           },
           {
             "name": "Double Tap",
             "img": "",
-            "effect": "Bullet Velocity increases by 33%",
+            "effect": "Increases fire rate of all 'bullet' weapons by 33%, as well as Bouncing Betty speed.",
             "price": 2000
           },
           {
             "name": "Speed Cola",
             "img": "",
-            "effect": "Reload 2x faster",
+            "effect": "Increases reload speed by 50 percent and massively increases the speed at which players can rebuild barriers.",
             "price": 3000
           }      
       ]

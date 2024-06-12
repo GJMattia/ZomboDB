@@ -21,7 +21,7 @@ export default function LoginScreen({setUser}){
       
         <SafeAreaView style={styles.container}>
         <Text style={styles.tagline}>Enter info to sign in!</Text>
-        <Image source={require('../assets/images/perks/WAWspeed.gif')}/>
+        <Image source={require('../assets/images/perks/speed.webp')}/>
 
 
 
