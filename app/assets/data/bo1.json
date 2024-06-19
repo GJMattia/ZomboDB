@@ -1,79 +1,76 @@
 {
-    "name": "Black Ops 1",
-    "maps": [
-      {
-          "name": "Kino Der Toten",
-          "starting": [],
-          "perks":[],
-          "box": [],
-          "wall": []
-      },
-      {
-        "name": "Five",
-        "starting": [],
-        "perks":[],
-        "box": [],
-        "wall": []
-       },
-       {
-      "name": "Ascension",
+  "name": "Black Ops 1",
+  "maps": [
+    {
+      "name": "Kino Der Toten",
       "starting": [],
-      "perks":[],
+      "perks": [],
       "box": [],
       "wall": []
-     },
-     {
-    "name": "Shangri La",
-    "starting": [],
-    "perks":[],
-    "box": [],
-    "wall": []
-}
+    },
+    {
+      "name": "Five",
+      "starting": [],
+      "perks": [],
+      "box": [],
+      "wall": []
+    },
+    {
+      "name": "Ascension",
+      "starting": [],
+      "perks": [],
+      "box": [],
+      "wall": []
+    },
+    {
+      "name": "Shangri La",
+      "starting": [],
+      "perks": [],
+      "box": [],
+      "wall": []
+    }
   ],
-    "guns": [
-        
-      ],
-      "perks": [
-        {
-            "name": "Quick Revive",
-            "effect": "Revive Teammates 50% faster.",
-            "price": 1500
-          },
-          {
-            "name": "Jug",
-            "effect": "Increased health from 100 to 250.",
-            "price": 2500
-          },
-          {
-            "name": "Double Tap",
-            "effect": "Increases fire rate of all 'bullet' weapons by 33%, as well as Bouncing Betty speed.",
-            "price": 2000
-          },
-          {
-            "name": "Speed Cola",
-            "effect": "Increases reload speed by 50 percent and massively increases the speed at which players can rebuild barriers.",
-            "price": 3000
-          },
-          {
-            "name": "Stamina Up",
-            "effect": "Increases Sprint Endurance and Sprint Speed. Stamina also regenerates faster.",
-            "price": 2000
-          },   
-          {
-            "name": "PHD Flopper",
-            "effect": "Gives complete immunity to all explosive and falling damage, and dolphin diving now makes an explosion.",
-            "price": 2000
-          },
-          {
-            "name": "Deadshot",
-            "effect": "Removes scope sway as well as reduces recoil and increases hip-fire accuracy. Additionally, this Perk will 'snap' the auto-aim sight to the Zombie's critical areas when ADS'ing rather than their torso.",
-            "price": 1500
-          },
-          {
-            "name": "Mule Kick",
-            "effect": "Allows an additional weapon to be carried, for a total of three. The most recently purchased weapon will be lost when downed.",
-            "price": 4000
-          }
-               
-      ]
-  }
+  "guns": [],
+  "perks": [
+    {
+      "name": "Quick Revive",
+      "effect": "Revive Teammates 50% faster.",
+      "price": 1500
+    },
+    {
+      "name": "Jug",
+      "effect": "Increased health from 100 to 250.",
+      "price": 2500
+    },
+    {
+      "name": "Double Tap",
+      "effect": "Increases fire rate of all 'bullet' weapons by 33%, as well as Bouncing Betty speed.",
+      "price": 2000
+    },
+    {
+      "name": "Speed Cola",
+      "effect": "Increases reload speed by 50 percent and massively increases the speed at which players can rebuild barriers.",
+      "price": 3000
+    },
+    {
+      "name": "Stamina Up",
+      "effect": "Increases Sprint Endurance and Sprint Speed. Stamina also regenerates faster.",
+      "price": 2000
+    },
+    {
+      "name": "PHD Flopper",
+      "effect": "Gives complete immunity to all explosive and falling damage, and dolphin diving now makes an explosion.",
+      "price": 2000
+    },
+    {
+      "name": "Deadshot",
+      "effect": "Removes scope sway as well as reduces recoil and increases hip-fire accuracy. Additionally, this Perk will 'snap' the auto-aim sight to the Zombie's critical areas when ADS'ing rather than their torso.",
+      "price": 1500
+    },
+    {
+      "name": "Mule Kick",
+      "effect": "Allows an additional weapon to be carried, for a total of three. The most recently purchased weapon will be lost when downed.",
+      "price": 4000
+    }
+  ]
+}
