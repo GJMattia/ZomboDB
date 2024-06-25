@@ -1,7 +1,6 @@
 import { View } from "react-native";
 import AccountScreen from "../screens/AccountScreen";
 import SettingsScreen from "../screens/SettingsScreen";
-import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import GameNavigator from "./GameNavigator";
@@ -29,13 +28,17 @@ export default function TabNavigator({ user, setUser }) {
             iconName = focused ? "desktop" : "desktop-outline";
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return (
+            <View style={{ paddingTop: 10 }}>
+              <Ionicons name={iconName} size={size} color={color} />
+            </View>
+          );
+        },
+        tabBarActiveTintColor: "red",
+        tabBarStyle: {
+          backgroundColor: "#1a1a1a",
         },
       })}
-      tabBarOptions={{
-        activeTintColor: "red",
-        inactiveTintColor: "grey",
-      }}
     >
       <Tab.Screen
         name={game}

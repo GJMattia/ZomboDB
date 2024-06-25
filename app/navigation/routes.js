@@ -3,7 +3,9 @@ export default Object.freeze({
   REGISTER: "Register",
   GAMES: "Games",
   GAMEINFO: "GameInfo",
-  MAPS: "GameMaps",
-  PERKS: "GamePerks",
-  PERK: "GamePerk",
+  MAPS: "Maps",
+  PERKS: "Perks",
+  PERK: "Perk",
+  DROPS: "Drops",
+  DROP: "Drop",
 });

@@ -53,8 +53,10 @@ export default function InfoScreen({ navigation, route }) {
                 navigation.navigate(routes.MAPS, { mapData: gameData[key] });
               } else if (key === "perks") {
                 navigation.navigate(routes.PERKS, { perkData: gameData[key] });
+              } else if (key === "drops") {
+                navigation.navigate(routes.DROPS, { dropData: gameData[key] });
+                // Add more conditions if there are more keys to handle
               }
-              // Add more conditions if there are more keys to handle
             }}
           >
             <Text style={styles.buttonText}>

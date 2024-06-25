@@ -83,5 +83,27 @@
       "effect": "Increases reload speed by 50 percent and massively increases the speed at which players can rebuild barriers.",
       "price": 3000
     }
+  ],
+  "drops": [
+    {
+      "name": "Max Ammo",
+      "effect": "Gives all alive players the maximum ammunition possible to obtain for whatever weapon the players are carrying, although the player's current magazine will not be replenished."
+    },
+    {
+      "name": "Instakill",
+      "effect": "All damage sources from the player to instantly kill a zombie at any round for 30 seconds."
+    },
+    {
+      "name": "Double Points",
+      "effect": "Doubles the amount of points earned for 30 seconds."
+    },
+    {
+      "name": "Nuke",
+      "effect": "Kills any zombies that are currently on the map."
+    },
+    {
+      "name": "Carpenter",
+      "effect": "All windows will be repaired and players get 200 points "
+    }
   ]
 }

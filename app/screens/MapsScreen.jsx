@@ -2,28 +2,29 @@ import {
   ImageBackground,
   StyleSheet,
   View,
-  Image,
+  FlatList,
   Text,
   TouchableOpacity,
 } from "react-native";
 import routes from "../navigation/routes";
 
 export default function MapsScreen({ navigation, route }) {
+  const Maps = {
+    "Nact Der Untoten": require("../assets/images/maps/nact.webp"),
+    Veruct: require("../assets/images/maps/verukkt.webp"),
+    "Shino Numa": require("../assets/images/maps/shino.webp"),
+    "Der Reise": require("../assets/images/maps/der.jpg"),
+  };
+
   const { mapData } = route.params;
 
-  const renderMapData = () => {
-    if (!mapData) return null;
-    return mapData.map((map, index) => (
-      <View key={index} style={styles.buttonContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate(routes.MAP, { mapData: map })}
-        >
-          <Text style={styles.buttonText}>{map.name}</Text>
-        </TouchableOpacity>
-      </View>
-    ));
-  };
+  const renderItem = ({ item }) => (
+    <ImageBackground source={Maps[item.name]} style={styles.map}>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>{item.name}</Text>
+      </TouchableOpacity>
+    </ImageBackground>
+  );
 
   return (
     <ImageBackground
@@ -32,9 +33,12 @@ export default function MapsScreen({ navigation, route }) {
     >
       <Text style={styles.title}>Maps</Text>
 
-      <View style={styles.buttonContainer}>
-        {mapData ? renderMapData() : <Text>Loading...</Text>}
-      </View>
+      <FlatList
+        style={styles.list}
+        data={mapData}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.name}
+      />
     </ImageBackground>
   );
 }
@@ -46,19 +50,27 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
+    width: "100%",
+    textAlign: "center",
     fontSize: 40,
     fontWeight: "600",
-    paddingVertical: 20,
     color: "white",
+    backgroundColor: "blue",
   },
-  buttonContainer: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
+  list: {
+    width: "100%",
+    backgroundColor: "yellow",
+  },
+  map: {
+    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    width: "100%",
+    padding: 20,
+    margin: 10,
+    borderRadius: 5,
   },
   button: {
     backgroundColor: "rgba(0, 0, 0, 0.8)",
-    width: "90%",
+    width: "100%",
     padding: 20,
     margin: 10,
     borderRadius: 5,
