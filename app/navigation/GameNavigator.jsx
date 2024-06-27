@@ -1,11 +1,12 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import GameScreen from "../screens/GamesScreen";
-import InfoScreen from "../screens/InfoScreen";
+import GamesScreen from "../screens/GamesScreen";
+import GameScreen from "../screens/GameScreen";
 import PerksScreen from "../screens/PerksScreen";
 import PerkScreen from "../screens/PerkScreen";
 import MapsScreen from "../screens/MapsScreen";
 import DropsScreen from "../screens/DropsScreen";
 import DropScreen from "../screens/DropScreen";
+import MapScreen from "../screens/MapScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,7 +30,7 @@ export default function GameNavigator({ user, setUser }) {
     <Stack.Navigator>
       <Stack.Screen
         name="Games"
-        component={GameScreen}
+        component={GamesScreen}
         options={{
           headerShown: false,
         }}
@@ -42,9 +43,9 @@ export default function GameNavigator({ user, setUser }) {
           headerTitle: "",
           cardStyleInterpolator: expandScreen,
         }}
-        name="GameInfo"
+        name="Game"
       >
-        {(props) => <InfoScreen {...props} setUser={setUser} />}
+        {(props) => <GameScreen {...props} setUser={setUser} />}
       </Stack.Screen>
 
       <Stack.Screen
@@ -57,6 +58,18 @@ export default function GameNavigator({ user, setUser }) {
         }}
       >
         {(props) => <MapsScreen {...props} setUser={setUser} />}
+      </Stack.Screen>
+
+      <Stack.Screen
+        name="Map"
+        options={{
+          headerTransparent: true,
+          headerTintColor: "#fff",
+          headerTitle: "",
+          cardStyleInterpolator: expandScreen,
+        }}
+      >
+        {(props) => <MapScreen {...props} setUser={setUser} />}
       </Stack.Screen>
 
       <Stack.Screen

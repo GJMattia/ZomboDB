@@ -2,10 +2,11 @@ export default Object.freeze({
   LOGIN: "Login",
   REGISTER: "Register",
   GAMES: "Games",
-  GAMEINFO: "GameInfo",
+  GAME: "Game",
   MAPS: "Maps",
   PERKS: "Perks",
   PERK: "Perk",
   DROPS: "Drops",
   DROP: "Drop",
+  MAP: "Map",
 });

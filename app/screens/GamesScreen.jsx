@@ -16,7 +16,7 @@ export default function GameScreen({ navigation }) {
       <TouchableOpacity
         key={index}
         style={styles.button}
-        onPress={() => navigation.navigate(routes.GAMEINFO, { gameName: game })}
+        onPress={() => navigation.navigate(routes.GAME, { gameName: game })}
       >
         <Text style={styles.buttonText}>{game}</Text>
       </TouchableOpacity>

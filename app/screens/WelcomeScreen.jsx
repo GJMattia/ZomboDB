@@ -8,11 +8,15 @@ import {
 } from "react-native";
 import routes from "../navigation/routes";
 
-export default function WelcomeScreen({ navigation }) {
+export default function WelcomeScreen({ navigation, setUser }) {
+  const guest = { name: "sauce monster" };
+  function GUEST() {
+    setUser(guest);
+  }
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/images/other/night.gif")}
+      source={require("../assets/images/other/stars.gif")}
     >
       <View style={styles.logoContainer}>
         <Text style={styles.tagline}>ZomboDB</Text>
@@ -23,6 +27,10 @@ export default function WelcomeScreen({ navigation }) {
       </View>
 
       <View style={styles.buttonsContainer}>
+        <TouchableOpacity style={styles.button} onPress={GUEST}>
+          <Text style={styles.text}>Use as guest</Text>
+        </TouchableOpacity>
+
         <TouchableOpacity
           onPress={() => navigation.navigate(routes.LOGIN)}
           style={styles.button}

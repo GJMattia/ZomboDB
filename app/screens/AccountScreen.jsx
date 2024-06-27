@@ -12,6 +12,7 @@ export default function Account({ user, setUser }) {
     logOut();
     setUser(null);
   }
+  console.log(user);
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.tagline}>Sign Out?</Text>
@@ -19,7 +20,7 @@ export default function Account({ user, setUser }) {
         style={styles.img}
         source={require("../assets/images/perks/speed.webp")}
       />
-      <Text style={styles.tagline}>user.name</Text>
+      <Text style={styles.tagline}>{user.name}</Text>
 
       <TouchableOpacity style={styles.button} onPress={signOut}>
         <Text style={styles.text}>Log Out</Text>

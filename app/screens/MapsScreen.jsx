@@ -20,7 +20,10 @@ export default function MapsScreen({ navigation, route }) {
 
   const renderItem = ({ item }) => (
     <ImageBackground source={Maps[item.name]} style={styles.map}>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate(routes.MAP, { mapData: item })}
+      >
         <Text style={styles.buttonText}>{item.name}</Text>
       </TouchableOpacity>
     </ImageBackground>
@@ -55,25 +58,24 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: "600",
     color: "white",
-    backgroundColor: "blue",
   },
   list: {
+    flexGrow: 0,
     width: "100%",
-    backgroundColor: "yellow",
   },
   map: {
-    backgroundColor: "rgba(0, 0, 0, 0.8)",
-    width: "100%",
-    padding: 20,
-    margin: 10,
-    borderRadius: 5,
+    backgroundColor: "dodgerblue",
+    margin: 20,
+    height: 100,
+    alignItems: "center",
+    justifyContent: "center",
   },
   button: {
-    backgroundColor: "rgba(0, 0, 0, 0.8)",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
     width: "100%",
-    padding: 20,
-    margin: 10,
-    borderRadius: 5,
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
   },
   buttonText: {
     textAlign: "center",

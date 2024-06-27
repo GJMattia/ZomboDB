@@ -8,11 +8,9 @@ const Stack = createStackNavigator();
 export default function AuthNavigator({ setUser }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Welcome"
-        component={WelcomeScreen}
-        options={{ headerShown: false }}
-      />
+      <Stack.Screen name="Welcome" options={{ headerShown: false }}>
+        {(props) => <WelcomeScreen {...props} setUser={setUser} />}
+      </Stack.Screen>
 
       <Stack.Screen name="Login">
         {(props) => <LoginScreen {...props} setUser={setUser} />}

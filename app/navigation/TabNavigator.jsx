@@ -47,7 +47,7 @@ export default function TabNavigator({ user, setUser }) {
       />
 
       <Tab.Screen name={account} options={{ headerShown: false }}>
-        {(props) => <AccountScreen {...props} setUser={setUser} />}
+        {(props) => <AccountScreen {...props} user={user} setUser={setUser} />}
       </Tab.Screen>
 
       <Tab.Screen
