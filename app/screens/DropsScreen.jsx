@@ -13,8 +13,8 @@ export default function DropsScreen({ navigation, route }) {
     "Max Ammo": require("../assets/images/drops/max.png"),
     Instakill: require("../assets/images/drops/insta.png"),
     "Double Points": require("../assets/images/drops/points.png"),
-    Nuke: require("../assets/images/drops/max.png"),
-    Carpenter: require("../assets/images/drops/nuke.png"),
+    Nuke: require("../assets/images/drops/nuke.png"),
+    Carpenter: require("../assets/images/drops/carp.png"),
   };
 
   const { dropData } = route.params;

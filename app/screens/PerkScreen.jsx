@@ -7,8 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import routes from "../navigation/routes";
+import { useState } from "react";
 
 export default function PerkScreen({ navigation, route }) {
+  let [count, setCount] = useState(0);
+
   const Perks = {
     "Quick Revive": require("../assets/images/perks/qr.webp"),
     Jug: require("../assets/images/perks/jug.webp"),
@@ -40,6 +43,18 @@ export default function PerkScreen({ navigation, route }) {
       <Text style={styles.price}>Price: {perkData.price}</Text>
 
       <Text style={styles.effect}>{perkData.effect}</Text>
+
+      <Text style={styles.count}>Perk Rating: {count}</Text>
+
+      <View style={styles.rateBox}>
+        <TouchableOpacity onPress={() => setCount(count + 1)}>
+          <Text style={styles.rate}>👍</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => setCount(count - 1)}>
+          <Text style={styles.rate}>👎</Text>
+        </TouchableOpacity>
+      </View>
     </ImageBackground>
   );
 }
@@ -101,5 +116,34 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "white",
     fontSize: 18,
+  },
+  count: {
+    fontSize: 18,
+    fontWeight: "600",
+    width: "50%",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    padding: 10,
+    color: "white",
+    textAlign: "center",
+    margin: 5,
+  },
+  rate: {
+    fontSize: 18,
+    fontWeight: "600",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    padding: 10,
+    color: "white",
+    textAlign: "center",
+  },
+  rateBox: {
+    fontSize: 18,
+    fontWeight: "600",
+    width: "50%",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    padding: 10,
+    color: "white",
+    textAlign: "center",
+    margin: 5,
   },
 });

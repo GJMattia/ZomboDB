@@ -7,6 +7,8 @@ import MapsScreen from "../screens/MapsScreen";
 import DropsScreen from "../screens/DropsScreen";
 import DropScreen from "../screens/DropScreen";
 import MapScreen from "../screens/MapScreen";
+import GunsScreen from "../screens/GunsScreen";
+import GunScreen from "../screens/GunScreen";
 
 const Stack = createStackNavigator();
 
@@ -70,6 +72,30 @@ export default function GameNavigator({ user, setUser }) {
         }}
       >
         {(props) => <MapScreen {...props} setUser={setUser} />}
+      </Stack.Screen>
+
+      <Stack.Screen
+        name="Guns"
+        options={{
+          headerTransparent: true,
+          headerTintColor: "#fff",
+          headerTitle: "",
+          cardStyleInterpolator: expandScreen,
+        }}
+      >
+        {(props) => <GunsScreen {...props} setUser={setUser} />}
+      </Stack.Screen>
+
+      <Stack.Screen
+        name="Gun"
+        options={{
+          headerTransparent: true,
+          headerTintColor: "#fff",
+          headerTitle: "",
+          cardStyleInterpolator: expandScreen,
+        }}
+      >
+        {(props) => <GunScreen {...props} setUser={setUser} />}
       </Stack.Screen>
 
       <Stack.Screen

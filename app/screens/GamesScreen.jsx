@@ -9,8 +9,8 @@ import {
 import routes from "../navigation/routes";
 
 export default function GameScreen({ navigation }) {
-  const GAMES = ["World at War", "Black Ops 1", "Black Ops 2", "Black Ops 3"];
-
+  // const GAMES = ["World at War", "Black Ops 1", "Black Ops 2", "Black Ops 3"];
+  const GAMES = ["World at War"];
   const renderGameButtons = () => {
     return GAMES.map((game, index) => (
       <TouchableOpacity

@@ -53,7 +53,8 @@ export default function GameScreen({ navigation, route }) {
                 navigation.navigate(routes.PERKS, { perkData: gameData[key] });
               } else if (key === "drops") {
                 navigation.navigate(routes.DROPS, { dropData: gameData[key] });
-                // Add more conditions if there are more keys to handle
+              } else if (key === "guns") {
+                navigation.navigate(routes.GUNS, { gunData: gameData[key] });
               }
             }}
           >
@@ -68,7 +69,7 @@ export default function GameScreen({ navigation, route }) {
   return (
     <ImageBackground
       style={styles.background}
-      source={require("../assets/images/other/stars.gif")}
+      source={require("../assets/images/other/night.gif")}
       resizeMode="cover"
     >
       <Text style={styles.title}>{gameName}</Text>

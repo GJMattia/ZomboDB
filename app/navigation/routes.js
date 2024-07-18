@@ -9,4 +9,6 @@ export default Object.freeze({
   DROPS: "Drops",
   DROP: "Drop",
   MAP: "Map",
+  GUNS: "Guns",
+  GUN: "Gun",
 });
